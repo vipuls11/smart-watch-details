@@ -1,0 +1,64 @@
+.SmartwatchSubContent {
+  width: 100%;
+}
+
+.SmartwatchSubContent > h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.Smartwatchimage {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.Smartwatchimage > img {
+  width: 80px;
+  border: 1px solid black;
+}
+
+.SmartwatchButton {
+  display: inline-flex;
+  gap: 10px;
+}
+
+/* .Time {
+  border: 1px solid black;
+  padding: 5px 30px;
+  padding: 10px 30px;
+  background-color: orange;
+  border-radius: 8px;
+  font-weight: 600;
+} */
+
+.Time:hover {
+  background-color: rgb(206, 170, 170);
+  color: black;
+}
+
+.Btn {
+  border: 1px solid black;
+  padding: 10px 30px;
+  background-color: orange;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.active {
+  background-color: red;
+  color: white; /* Optional: for better contrast */
+}
+.Buynow {
+  background-color: skyblue;
+  color: white;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 10px 30px;
+  background-color: skyblue;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.SelectedProductImage {
+  border: 2px solid teal;
+}
