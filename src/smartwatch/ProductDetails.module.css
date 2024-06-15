@@ -37,7 +37,7 @@
   color: black;
 }
 
-.Btn {
+/* .Btn {
   border: 1px solid black;
   padding: 10px 30px;
   background-color: orange;
@@ -46,8 +46,21 @@
 }
 .active {
   background-color: red;
-  color: white; /* Optional: for better contrast */
+  color: white; Optional: for better contrast 
+} */
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: blueviolet;
 }
+
+.active {
+  background-color: red;
+  color: white;
+}
+
 .Buynow {
   background-color: skyblue;
   color: white;

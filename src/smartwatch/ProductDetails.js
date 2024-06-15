@@ -5,6 +5,16 @@ import classes from "./ProductDetails.module.css";
 const ProductDetails = (props) => {
   const [activeIndex, setActiveIndex] = useState("");
   console.log(props, "props vipul vishwkarma");
+  const buttonHeartRate = props.Button_Heart_Rate || "Default Button Label";
+  const buttonTime = props.Button_Time || "Default Button Label";
+  const buttons = [
+    {
+      btn: buttonTime,
+    },
+    {
+      btn: buttonHeartRate,
+    },
+  ];
   // const colorOptions = props.image.map((item, pos) => {
   //   return (
   //     <img
@@ -48,7 +58,7 @@ const ProductDetails = (props) => {
       <div className="">
         <h5 className="">{props.Select_Feature}</h5>
         <div className={classes.SmartwatchButton}>
-          <button
+          {/* <button
             type=""
             className={`${classes.Btn} ${
               activeIndex === false ? `${classes.active}` : ""
@@ -65,7 +75,22 @@ const ProductDetails = (props) => {
             onClick={() => setActiveIndex(props.setIsActive(false))}
           >
             {props.Button_Heart_Rate}
-          </button>
+          </button> */}
+          <div>
+            {buttons.map((item, index) => {
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveIndex(props.setIsActive(index))}
+                  className={`${classes.btn}  ${
+                    activeIndex === index ? classes.active : ""
+                  }`}
+                >
+                  {item.btn}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
       <button type="" className={`${classes.Buynow} `}>
