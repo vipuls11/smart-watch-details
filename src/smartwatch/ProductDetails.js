@@ -9,10 +9,10 @@ const ProductDetails = (props) => {
   const buttonTime = props.Button_Time || "Default Button Label";
   const buttons = [
     {
-      btn: buttonTime,
+      btn: buttonHeartRate,
     },
     {
-      btn: buttonHeartRate,
+      btn: buttonTime,
     },
   ];
   // const colorOptions = props.image.map((item, pos) => {
@@ -25,8 +25,6 @@ const ProductDetails = (props) => {
   //     />
   //   );
   // });
-
-  console.log(activeIndex, "kbsfbds");
 
   const handleClick = (item) => {
     props.setImage(item.imageUrl);
@@ -58,30 +56,41 @@ const ProductDetails = (props) => {
       <div className="">
         <h5 className="">{props.Select_Feature}</h5>
         <div className={classes.SmartwatchButton}>
-          {/* <button
-            type=""
-            className={`${classes.Btn} ${
-              activeIndex === false ? `${classes.active}` : ""
-            }`}
-            onClick={() => setActiveIndex(props.setIsActive(true))}
-          >
-            {props.Button_Time}
-          </button>
           <button
             type=""
             className={`${classes.Btn} ${
-              activeIndex === true ? `${classes.active}` : ""
+              activeIndex === true ? classes.active : ""
             }`}
-            onClick={() => setActiveIndex(props.setIsActive(false))}
+            onClick={() => {
+              setActiveIndex(true);
+              props.setIsActive(true);
+            }}
           >
             {props.Button_Heart_Rate}
-          </button> */}
+          </button>
+
+          <button
+            type=""
+            className={`${classes.Btn} ${
+              activeIndex === false ? classes.active : ""
+            }`}
+            onClick={() => {
+              setActiveIndex(false);
+              props.setIsActive(false);
+            }}
+          >
+            {props.Button_Time}
+          </button>
+
           <div>
             {buttons.map((item, index) => {
               return (
                 <button
                   key={item.id}
-                  onClick={() => setActiveIndex(props.setIsActive(index))}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    props.setIsActive(index);
+                  }}
                   className={`${classes.btn}  ${
                     activeIndex === index ? classes.active : ""
                   }`}
